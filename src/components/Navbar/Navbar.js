@@ -30,7 +30,8 @@ const Navbar = () => {
   
   const handleFetchPokemon = (e)=>{
     e.preventDefault();
-    axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeState}`).then((res)=>{
+    let lowerCaseName = pokeState.toLowerCase();
+    axios.get(`https://pokeapi.co/api/v2/pokemon/${lowerCaseName}`).then((res)=>{
       let data = res.data
       setPokemon(poke => ({...poke, ...data,name:data.name}))
       setOpen(true)
