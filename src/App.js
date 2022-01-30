@@ -41,7 +41,7 @@ function App() {
         setNextPageUrl(res.data.next);
         setPrevPageUrl(res.data.previous);
         setPokemon(res.data.results);
-        console.log("resdata:", res.data);
+        // console.log("resdata:", res.data);
       });
 
     return () => cancel();
