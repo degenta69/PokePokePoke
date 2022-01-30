@@ -11,6 +11,8 @@ import popUpShow from "./Atoms/popUpShow";
 import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
 import AlertPopUp from "./components/AlertPopUp/AlertPopUp";
 import listApiUrlAtom from "./Atoms/listApiUrlAtom";
+import './fonts/Pokemon Hollow.ttf'; 
+import './fonts/Pokemon Solid.ttf'; 
 
 function App() {
   const currentPageUrl = useRecoilValue(listApiUrlAtom);
