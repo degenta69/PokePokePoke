@@ -36,17 +36,17 @@ export default function PokeCard({url,name}) {
     //   setPrevPageUrl(res.data.previous)
         setLoading(false)
       setpokemon({
-        data:res.data,
-          name:res.data.name,
-          svg:res.data.sprites.other.dream_world.front_default,
-        height:res.data.height,
-        id:res.data.id,
-        png:res.data.sprites.front_default,
-        type:{...res.data.types[0].type}
-      })
+        data: res.data,
+        name: res.data.name,
+        svg: res.data.sprites.other.dream_world.front_default,
+        height: res.data.height,
+        id: res.data.id,
+        png: res.data.sprites.front_default,
+        type: { ...res.data.types[0].type },
+      });
       // console.log('resdata:', res.data);
     })
-    }, []);
+    }, [url]);
     const handlePopup = ()=>{
       setPokemon(poke => ({...poke, ...pokemon.data,name:pokemon.name}))
       showPopup(true)
