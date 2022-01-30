@@ -1,22 +1,14 @@
 body{
-    height:calc(100vh * 5.2);
+    height:max-content;
     
     background: rgb(68, 255, 68);
     background: linear-gradient(
     180deg,
-    /* rgba(68, 255, 68, 1) 0%, */
-    /* rgba(237, 165, 66, 1) 9%, */
-    /* rgba(171, 74, 6, 1) 18%, */
     rgb(33 37 41) 0%,
     rgb(33 37 41) 5%,
     rgba(79, 120, 243, 1) 25%,
-    /* rgba(245, 13, 13, 1) 36%, */
-    /* rgba(251, 183, 65, 1) 45%, */
     rgba(127, 1, 254, 1) 75%,
     rgba(98, 89, 129, 1) 100%
-    /* rgba(255, 255, 51, 1) 72%, */
-    /* rgba(253, 193, 212, 1) 81%, */
-    /* rgba(158, 2, 0, 1) 90% */
   );
 }
 
@@ -28,16 +20,10 @@ body{
   .pokeList{
     grid-template-columns: 1fr 1fr
   }
-  body{
-    height:calc(100vh * 7.4);
-  }
 }
 @media (max-width:425px){
   .pokeList{
     grid-template-columns: 1fr
-  }
-  body{
-    height:calc(100vh * 13.6);
   }
 }
 
