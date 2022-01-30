@@ -57,31 +57,31 @@ function App() {
     <div className="app">
       <Navbar />
       <AlertPopUp />
-      {popUp ? (
-        <PokemonDetail />
-      ) : (
-        <div className="my-auto d-flex flex-column">
-          {loading ? (
-            <>
-              <Loader />
-            </>
-          ) : (
-            <>
-              {currentPageUrl.type ? (
-                <PokemonTypeList />
-              ) : (
-                <PokemonList pokemon={pokemon} />
-              )}
-            </>
-          )}
-          {!currentPageUrl.type && (
-            <Pagination
-              gotoNextPage={nextPageUrl ? gotoNextPage : null}
-              gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
-            />
-          )}
-        </div>
-      )}
+      {popUp && <PokemonDetail />}
+      <div
+        style={{ visibility: popUp && "hidden" }}
+        className="my-auto d-flex flex-column"
+      >
+        {loading ? (
+          <>
+            <Loader />
+          </>
+        ) : (
+          <>
+            {currentPageUrl.type ? (
+              <PokemonTypeList />
+            ) : (
+              <PokemonList pokemon={pokemon} />
+            )}
+          </>
+        )}
+        {!currentPageUrl.type && (
+          <Pagination
+            gotoNextPage={nextPageUrl ? gotoNextPage : null}
+            gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
+          />
+        )}
+      </div>
     </div>
   );
 }
