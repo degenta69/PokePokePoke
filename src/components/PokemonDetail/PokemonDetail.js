@@ -55,7 +55,7 @@ export default function PokemonDetail() {
                 style={{
                   objectFit: "contain",
                 }}
-                src={pokemon.sprites.other.dream_world.front_default}
+                src={pokemon.sprites.other.dream_world.front_default?pokemon.sprites.other.dream_world.front_default:pokemon.sprites.front_default}
                 alt={pokemon.name}
               />
               <Box className="d-flex flex-column-reverse justify-content-between">

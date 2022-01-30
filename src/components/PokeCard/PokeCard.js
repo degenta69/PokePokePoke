@@ -15,6 +15,7 @@ export default function PokeCard({url,name}) {
   const showPopup = useSetRecoilState(popUpShow)
   const setPokemon = useSetRecoilState(pokemonFromList)
     const [pokemon, setpokemon] = useState({
+      png:'',
         name:'',
         height:'',
         id:Number,
@@ -40,6 +41,7 @@ export default function PokeCard({url,name}) {
           svg:res.data.sprites.other.dream_world.front_default,
         height:res.data.height,
         id:res.data.id,
+        png:res.data.sprites.front_default,
         type:{...res.data.types[0].type}
       })
       // console.log('resdata:', res.data);
@@ -57,17 +59,14 @@ export default function PokeCard({url,name}) {
         style={{objectFit:'contain',boxShadow:'inset 0px -20px 20px 1px #2624244a'}}
           component="img"
           height="192"
-          image={pokemon.svg}
+          image={pokemon.svg?pokemon.svg:pokemon.png}
           alt={pokemon.name}
         />}
         <CardContent className={`poke-${pokemon.type.name} position-relative`}>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom sx={{fontSize:'1rem', fontWeight:600}} className="text-uppercase" color="text.secondary" variant="h5" component="div">
             {name}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Height: {pokemon.height} 
-          </Typography>
-          <Typography variant="p" color="text.secondary">
+          <Typography variant="p" className='card-type' color="text.secondary">
             {pokemon.type.name}
           </Typography>
           <div className='position-absolute idDiv text-black-50' >

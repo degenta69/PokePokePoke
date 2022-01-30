@@ -80,7 +80,7 @@ const Navbar = () => {
           <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
           <li onClick={()=>{setUrl({ url:'', type:false}); setCurrentTypes('All Types')}} ><p className="dropdown-item" >All Types</p></li>
             {types.map((e,index)=>{
-             return(<li key={index} onClick={()=>{handleType(e)}} ><p className="dropdown-item" >{e.name}</p></li>)
+             return(<li key={index} className={`poke-${e.name}`} onClick={()=>{handleType(e)}} ><p className="dropdown-item" >{e.name}</p></li>)
             })
             }
           </ul>
