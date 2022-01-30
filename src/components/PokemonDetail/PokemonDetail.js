@@ -61,7 +61,7 @@ export default function PokemonDetail() {
               <Box className="d-flex flex-column-reverse justify-content-between">
                 {pokemon.stats.map((stat, index) => {
                   return (
-                    <Box key={index} className="d-flex justify-content-between">
+                    <Box key={index} className="d-flex stat-box justify-content-between">
                       <Typography
                         className="text-uppercase stat-name-para"
                         id="transition-modal-description"
