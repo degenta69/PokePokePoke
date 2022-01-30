@@ -1,0 +1,91 @@
+body{
+    height:calc(100vh * 5.2);
+    
+    background: rgb(68, 255, 68);
+    background: linear-gradient(
+    180deg,
+    /* rgba(68, 255, 68, 1) 0%, */
+    /* rgba(237, 165, 66, 1) 9%, */
+    /* rgba(171, 74, 6, 1) 18%, */
+    rgb(33 37 41) 0%,
+    rgb(33 37 41) 5%,
+    rgba(79, 120, 243, 1) 25%,
+    /* rgba(245, 13, 13, 1) 36%, */
+    /* rgba(251, 183, 65, 1) 45%, */
+    rgba(127, 1, 254, 1) 75%,
+    rgba(98, 89, 129, 1) 100%
+    /* rgba(255, 255, 51, 1) 72%, */
+    /* rgba(253, 193, 212, 1) 81%, */
+    /* rgba(158, 2, 0, 1) 90% */
+  );
+}
+
+.pokeList{
+  grid-template-columns: 1fr 1fr 1fr
+}
+
+@media (max-width:576px){
+  .pokeList{
+    grid-template-columns: 1fr 1fr
+  }
+  body{
+    height:calc(100vh * 7.4);
+  }
+}
+@media (max-width:425px){
+  .pokeList{
+    grid-template-columns: 1fr
+  }
+  body{
+    height:calc(100vh * 13.6);
+  }
+}
+
+.poke-grass {
+  background-color: #44ff448a;
+}
+.poke-bug {
+  background-color: #eda542b5;
+}
+.poke-ground {
+  background-color: #ab4a06ba;
+}
+.poke-normal {
+  background-color: white;
+}
+.poke-water {
+  background-color: #4f78f399;
+}
+.poke-fighting {
+  background-color: #f50d0dad;
+}
+.poke-fire {
+  background-color: #fbb741;
+}
+.poke-psychic {
+  background-color: #625981a1;
+}
+.poke-poison {
+  background-color: #7f01fe7d;
+}
+.poke-electric {
+  background-color: #ffff33e6;
+}
+.poke-fairy {
+  background-color: #fdc1d4;
+}
+.poke-rock {
+  background-color: #808487;
+}
+.poke-ghost {
+  background-color: #c5cdd8;
+}
+.poke-ice {
+  background-color: #ccffff;
+}
+.poke-dragon {
+  background-color: #9e0200;
+}
+.poke-dark {
+  background-color: #6d929b;
+}

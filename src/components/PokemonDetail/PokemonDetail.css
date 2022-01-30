@@ -1,0 +1,26 @@
+
+.stat-para{
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+}
+@media (max-width:768px){
+    .detail-box{
+        flex-direction: column;
+    }
+    .poke-detail-svg{
+        max-width: 12rem;
+    }
+}
+@media (max-width:425px){
+    .detail-box-main{
+        max-width: 20rem;
+    }
+    .stat-name-para{
+       margin-top: 0 !important
+    }
+    .stat-para{
+        margin-top: 0 !important;
+        margin-right: 0.5rem !important;
+        margin-left: 0.5rem !important;
+    }
+}

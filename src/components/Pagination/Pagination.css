@@ -1,0 +1,40 @@
+.pagination-button {
+  display: flex;
+  height: 3em;
+  width: calc(100% - 70%);
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+}
+
+.prev > svg {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+}
+.next > svg {
+  transform: rotate(180deg);
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  transition: all 0.4s ease-in;
+}
+.prev:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(-5px);
+}
+.next:hover > svg {
+  font-size: 1.2em;
+  transform: translateX(5px) rotate(180deg);
+}
+
+.pagination-button:hover {
+    box-shadow: 9px 9px 33px #8107ff, 0px 1px 14px 0px;
+    transform: translateY(-6px);
+}
