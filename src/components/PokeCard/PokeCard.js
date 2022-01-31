@@ -15,17 +15,20 @@ export default function PokeCard({url,name}) {
   const showPopup = useSetRecoilState(popUpShow)
   const setPokemon = useSetRecoilState(pokemonFromList)
     const [pokemon, setpokemon] = useState({
-      png:'',
-        name:'',
-        height:'',
-        id:Number,
-        svg:'',
-        type:{
-            name:'',
-            url:''
+      png: "",
+      name: "",
+      height: "",
+      id: Number,
+      svg: "",
+      type: [
+        {
+          type: {
+            name: "Loading...",
+            url: "",
+          },
         },
-        data:{}
-
+      ],
+      data: {},
     });
     const [loading, setLoading] = useState(true)
 
@@ -42,7 +45,7 @@ export default function PokeCard({url,name}) {
         height: res.data.height,
         id: res.data.id,
         png: res.data.sprites.front_default,
-        type: { ...res.data.types[0].type },
+        type: res.data.types,
       });
       // console.log('resdata:', res.data);
     })
@@ -52,27 +55,47 @@ export default function PokeCard({url,name}) {
       showPopup(true)
     }
   return (
-    <Card onClick={handlePopup} sx={{ maxWidth: 200, height:'max-content' }}>
+    <Card onClick={handlePopup} sx={{ maxWidth: 200, height: "max-content" }}>
       <CardActionArea>
-        {loading?<Loader/>:<CardMedia
-        className={`poke-${pokemon.type.name}`}
-        style={{objectFit:'contain',boxShadow:'inset 0px -20px 20px 1px #2624244a'}}
-          component="img"
-          height="192"
-          image={pokemon.svg?pokemon.svg:pokemon.png}
-          alt={pokemon.name}
-        />}
-        <CardContent className={`poke-${pokemon.type.name} position-relative`}>
-          <Typography gutterBottom sx={{fontSize:'1rem', fontWeight:600}} className="text-uppercase" color="text.secondary" variant="h5" component="div">
+        {loading ? (
+          <Loader />
+        ) : (
+          <CardMedia
+            className={`poke-${pokemon.type[0].type.name}`}
+            style={{
+              objectFit: "contain",
+              boxShadow: "inset 0px -20px 20px 1px #2624244a",
+            }}
+            component="img"
+            height="192"
+            image={pokemon.svg ? pokemon.svg : pokemon.png}
+            alt={pokemon.name}
+          />
+        )}
+        <CardContent className={`poke-${pokemon.type[0].type.name} position-relative`}>
+          <Typography
+            gutterBottom
+            sx={{ fontSize: "1rem", fontWeight: 600 }}
+            className="text-uppercase"
+            color="text.secondary"
+            variant="h5"
+            component="div"
+          >
             {name}
           </Typography>
-          <Typography variant="p" className='card-type' color="text.secondary">
-            {pokemon.type.name}
-          </Typography>
-          <div className='position-absolute idDiv text-black-50' >
-          <p>
-            #{pokemon.id}
-          </p>
+          {pokemon.type.map((type) => {
+            return (
+              <Typography
+                variant="p"
+                className="card-type"
+                color="text.secondary"
+              >
+                {type.type.name}
+              </Typography>
+            );
+          })}
+          <div className="position-absolute idDiv text-black-50">
+            <p>#{pokemon.id}</p>
           </div>
         </CardContent>
       </CardActionArea>
