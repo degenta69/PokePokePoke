@@ -52,7 +52,7 @@ export default function PokeCard({url,name}) {
       showPopup(true)
     }
   return (
-    <Card onClick={handlePopup} sx={{ maxWidth: 200 }}>
+    <Card onClick={handlePopup} sx={{ maxWidth: 200, height:'max-content' }}>
       <CardActionArea>
         {loading?<Loader/>:<CardMedia
         className={`poke-${pokemon.type.name}`}
