@@ -25,7 +25,7 @@ export default function PokemonDetail() {
   const [open, setOpen] = useRecoilState(popUpShow);
   const pokemon = useRecoilValue(pokemonFromList);
   const handleClose = () => setOpen(false);
-  console.log(pokemon);
+  // console.log(pokemon);
   return (
     <div>
       <Modal

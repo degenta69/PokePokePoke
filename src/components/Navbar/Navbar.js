@@ -41,7 +41,7 @@ const Navbar = () => {
         // console.log('data:',data,'pokeAtom:',Pokemon)
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setAlert(true);
       });
     // console.log(pokeState)
